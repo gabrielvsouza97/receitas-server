@@ -1,6 +1,6 @@
-import data from "./recipesV2.json" assert{type: "json"};
+const data = require("./recipesV2.json");
 const app = require('express')();
-const { v4 } = require('uuid');
+// const { v4 } = require('uuid');
 
 app.get('/api', (req, res) => {
   res.setHeader('Content-Type', 'text/html');
