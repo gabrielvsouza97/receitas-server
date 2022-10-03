@@ -32,11 +32,6 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/api/v2', (req, res) => {
-  res.setHeader( 'Access-Control-Allow-Origin', '*');
-  res.setHeader( 'Access-Control-Allow-Credentials', true);
-  res.setHeader( 'Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   res.send(data);
 });
 
