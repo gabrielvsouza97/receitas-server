@@ -1,6 +1,8 @@
 const data = require("./recipesV2.json");
 const dataOriginal = require("./recipes.json");
-const app = require('express')();
+const express = require('express');
+const app = express();
+
 // const { v4 } = require('uuid');
 
 app.get('/api', (req, res) => {
@@ -10,7 +12,7 @@ app.get('/api', (req, res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Content-Type', 'text/html');
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-  res.send(dataOriginal);
+  res.send(data);
 });
 
 app.get('/apiv2', (req, res) => {
