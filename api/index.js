@@ -1,4 +1,4 @@
-import data from "./recipesV2.json" assert{type: "json"};
+const data = require("./recipesV2.json");
 const app = require('express')();
 const { v4 } = require('uuid');
 
