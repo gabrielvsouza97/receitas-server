@@ -3,6 +3,7 @@ var express = require('express')
 var routes = require('./routes')
 var user = require('./routes/user')
 var path = require('path')
+var dados = require("./api/recipesV2.json")
 
 var favicon = require('serve-favicon')
 var logger = require('morgan')
@@ -53,6 +54,16 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', routes.index)
 app.get('/users', user.list)
+
+app.get('/api/v2', (req, res) => {
+  res.setHeader( 'Access-Control-Allow-Origin', '*');
+  res.setHeader( 'Access-Control-Allow-Credentials', true);
+  res.setHeader( 'Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  res.send(dados);
+});
 
 // error handling middleware should be loaded after the loading the routes
 if (app.get('env') === 'development') {
