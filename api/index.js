@@ -10,7 +10,7 @@ app.get('/api', (req, res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Content-Type', 'text/html');
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-  res.send(dataOriginal);
+  res.send(data);
 });
 
 app.get('/apiv2', (req, res) => {
@@ -20,7 +20,7 @@ app.get('/apiv2', (req, res) => {
   res.setHeader('Content-Type', 'text/html');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-  res.send(data);
+  res.send(dataOriginal);
 });
 
 
