@@ -14,7 +14,7 @@ app.get('/api', (req, res) => {
   res.send(dataOriginal);
 });
 
-app.get('/apiV2', (req, res) => {
+app.get('/api/v2', (req, res) => {
   res.setHeader( 'Access-Control-Allow-Origin', '*');
   res.setHeader( 'Access-Control-Allow-Credentials', true);
   res.setHeader( 'Access-Control-Allow-Headers', 'Content-Type');
